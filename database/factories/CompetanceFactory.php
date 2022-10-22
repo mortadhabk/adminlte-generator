@@ -2,17 +2,17 @@
 
 namespace Database\Factories;
 
-use App\Models\Profile;
+use App\Models\Competance;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-class ProfileFactory extends Factory
+class CompetanceFactory extends Factory
 {
     /**
      * The name of the factory's corresponding model.
      *
      * @var string
      */
-    protected $model = Profile::class;
+    protected $model = Competance::class;
 
     /**
      * Define the model's default state.
@@ -22,9 +22,9 @@ class ProfileFactory extends Factory
     public function definition()
     {
         return [
-        'name' => $this->faker->word,
-        'email' => $this->faker->word,
-        'phone' => $this->faker->phoneNumber,
+            'name' => $this->faker->word,
+        'rating' => $this->faker->randomDigitNotNull,
+        'profile_id' => $this->faker->randomDigitNotNull,
         'created_at' => $this->faker->date('Y-m-d H:i:s'),
         'updated_at' => $this->faker->date('Y-m-d H:i:s')
         ];

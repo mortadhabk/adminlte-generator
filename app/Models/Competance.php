@@ -7,21 +7,21 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 /**
- * Class Profile
+ * Class Competance
  * @package App\Models
- * @version October 21, 2022, 9:40 pm UTC
+ * @version October 22, 2022, 11:26 am UTC
  *
  * @property string $name
- * @property string $email
- * @property integer $phone
+ * @property integer $rating
+ * @property integer $profile_id
  */
-class Profile extends Model
+class Competance extends Model
 {
     use SoftDeletes;
 
     use HasFactory;
 
-    public $table = 'profiles';
+    public $table = 'competances';
     
 
     protected $dates = ['deleted_at'];
@@ -30,8 +30,8 @@ class Profile extends Model
 
     public $fillable = [
         'name',
-        'email',
-        'phone'
+        'rating',
+        'profile_id'
     ];
 
     /**
@@ -41,8 +41,8 @@ class Profile extends Model
      */
     protected $casts = [
         'name' => 'string',
-        'email' => 'string',
-        'phone' => 'integer'
+        'rating' => 'integer',
+        'profile_id' => 'integer'
     ];
 
     /**
@@ -52,15 +52,8 @@ class Profile extends Model
      */
     public static $rules = [
         'name' => 'required',
-        'email' => 'required'
+        'rating' => 'min:0|max:10'
     ];
 
-    public function projects()
-    {
-        return $this->hasMany(Project::class);
-    }
-    public function Competances()
-    {
-        return $this->hasMany(Competances::class);
-    }
+    
 }
