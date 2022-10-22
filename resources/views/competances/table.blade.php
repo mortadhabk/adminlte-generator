@@ -4,7 +4,7 @@
         <tr>
             <th>Name</th>
         <th>Rating</th>
-        <th>Profile Id</th>
+        <th>Profile Name</th>
             <th colspan="3">Action</th>
         </tr>
         </thead>
@@ -13,7 +13,7 @@
             <tr>
                 <td>{{ $competance->name }}</td>
             <td>{{ $competance->rating }}</td>
-            <td>{{ $competance->profile_id }}</td>
+            <td>{{ $competance->profile->name }}</td>
                 <td width="120">
                     {!! Form::open(['route' => ['competances.destroy', $competance->id], 'method' => 'delete']) !!}
                     <div class='btn-group'>

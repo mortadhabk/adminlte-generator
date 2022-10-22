@@ -55,5 +55,7 @@ class Competance extends Model
         'rating' => 'min:0|max:10'
     ];
 
-    
+    public function profile(){
+        return $this->belongsTo(Profile::Class, 'profile_id');
+    }
 }

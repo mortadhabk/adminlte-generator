@@ -7,6 +7,7 @@ use App\Http\Requests\UpdateCompetanceRequest;
 use App\Repositories\CompetanceRepository;
 use App\Http\Controllers\AppBaseController;
 use Illuminate\Http\Request;
+use App\Models\Competance;
 use Flash;
 use Response;
 
@@ -29,7 +30,7 @@ class CompetanceController extends AppBaseController
      */
     public function index(Request $request)
     {
-        $competances = $this->competanceRepository->all();
+        $competances = Competance::with('Profile')->get();
 
         return view('competances.index')
             ->with('competances', $competances);
