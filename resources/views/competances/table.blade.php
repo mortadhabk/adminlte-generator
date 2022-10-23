@@ -5,6 +5,7 @@
             <th>Name</th>
         <th>Rating</th>
         <th>Profile Name</th>
+        <th>Image</th>
             <th colspan="3">Action</th>
         </tr>
         </thead>
@@ -14,6 +15,7 @@
                 <td>{{ $competance->name }}</td>
             <td>{{ $competance->rating }}</td>
             <td>{{ $competance->profile->name }}</td>
+            <td><img src={{ $competance->image_url }}></td>
                 <td width="120">
                     {!! Form::open(['route' => ['competances.destroy', $competance->id], 'method' => 'delete']) !!}
                     <div class='btn-group'>

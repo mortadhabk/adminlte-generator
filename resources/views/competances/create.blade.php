@@ -17,7 +17,7 @@
 
         <div class="card">
 
-            {!! Form::open(['route' => 'competances.store']) !!}
+            {!! Form::open(['route' => 'competances.store','files' => true]) !!}
 
             <div class="card-body">
 

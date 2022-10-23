@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 use App\Models\Competance;
 use Flash;
 use Response;
+use Intervention\Image\Facades\Image;
 
 class CompetanceController extends AppBaseController
 {
@@ -53,10 +54,14 @@ class CompetanceController extends AppBaseController
      *
      * @return Response
      */
-    public function store(CreateCompetanceRequest $request)
+    public function store(Request $request)
     {
+       
+        $image = $request->file('image_url');
+        $fileName = "img-".uniqid().".". strtolower($image->getClientOriginalExtension());
+        $image->move('imagets',$fileName);
         $input = $request->all();
-
+        $input['image_url'] = 'imagets/'.$fileName;
         $competance = $this->competanceRepository->create($input);
 
         Flash::success('Competance saved successfully.');
@@ -121,8 +126,12 @@ class CompetanceController extends AppBaseController
 
             return redirect(route('competances.index'));
         }
-
-        $competance = $this->competanceRepository->update($request->all(), $id);
+        $image = $request->file('image_url');
+        $fileName = "img-".uniqid().".". strtolower($image->getClientOriginalExtension());
+        $image->move('imagets',$fileName);
+        $input = $request->all();
+        $input['image_url'] = 'imagets/'.$fileName;
+        $competance = $this->competanceRepository->update($input, $id);
 
         Flash::success('Competance updated successfully.');
 

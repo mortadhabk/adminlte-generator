@@ -14,6 +14,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
  * @property string $name
  * @property integer $rating
  * @property integer $profile_id
+ * @property integer $image_url
  */
 class Competance extends Model
 {
@@ -31,7 +32,9 @@ class Competance extends Model
     public $fillable = [
         'name',
         'rating',
+        'image_url',
         'profile_id'
+       
     ];
 
     /**
@@ -42,7 +45,8 @@ class Competance extends Model
     protected $casts = [
         'name' => 'string',
         'rating' => 'integer',
-        'profile_id' => 'integer'
+        'profile_id' => 'integer',
+      
     ];
 
     /**
