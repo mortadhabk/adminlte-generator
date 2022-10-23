@@ -39,16 +39,6 @@ class ProjectRepository extends BaseRepository
     {
         return Project::class;
     }
-    public function find($id, $columns = ['*'])
-    {
-        $query = $this->model->newQuery();
 
-        return $query->find($id, $columns);
-    }
-    public function all($search = [], $skip = null, $limit = null, $columns = ['*'])
-    {
-        $query = $this->allQuery($search, $skip, $limit);
 
-        return $query->get($columns);
-    }
 }
