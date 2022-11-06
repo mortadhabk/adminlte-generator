@@ -123,19 +123,27 @@ class CompetanceController extends AppBaseController
 
         if (empty($competance)) {
             Flash::error('Competance not found');
-
             return redirect(route('competances.index'));
         }
-        $image = $request->file('image_url');
-        $fileName = "img-".uniqid().".". strtolower($image->getClientOriginalExtension());
-        $image->move('imagets',$fileName);
-        $input = $request->all();
-        $input['image_url'] = 'imagets/'.$fileName;
-        $competance = $this->competanceRepository->update($input, $id);
+        if($request->file('image_url') !== null){
+            $image = $request->file('image_url');
+            $fileName = "img-".uniqid().".". strtolower($image->getClientOriginalExtension());
+            $image->move('imagets',$fileName);
+            $input = $request->all();
+            $input['image_url'] = 'imagets/'.$fileName;
+    
+            $competance = $this->competanceRepository->update($input, $id);
+            Flash::success('Competance updated successfully.');
+            return redirect(route('competances.index'));
+        }else{
+            $input = $request->all();
+            unset($input['image_url']) ;
+            $competance = $this->competanceRepository->update($input, $id);
+            Flash::success('Competance updated successfully.');
+            return redirect(route('competances.index'));
+        }
 
-        Flash::success('Competance updated successfully.');
 
-        return redirect(route('competances.index'));
     }
 
     /**
