@@ -20,6 +20,7 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/profiles/{id}', [App\Http\Controllers\ProjectController::class, 'indexhome'])->name('indexhome');
 
 
 Route::resource('profiles', App\Http\Controllers\ProfileController::class);

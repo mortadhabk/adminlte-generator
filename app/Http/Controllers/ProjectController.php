@@ -34,7 +34,12 @@ class ProjectController extends AppBaseController
         return view('projects.index')
             ->with('projects', $projects);
     }
-
+    public function indexhome($id)
+    {
+        $projects = Project::find($id);
+        return view('projects.projecthome')
+            ->with('projects', $projects);
+    }
     /**
      * Show the form for creating a new Project.
      *

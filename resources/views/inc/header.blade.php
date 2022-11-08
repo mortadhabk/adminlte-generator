@@ -26,11 +26,9 @@
                             <li class="menu-item-has-children">
                                 <a href="javascript:void(0);">Projects</a>
                                 <ul class="axil-submenu">
-                                    <li><a href="index-1.html">Digital Agency</a></li>
-                                    <li><a href="index-2.html">Creative Agency</a></li>
-                                    <li><a href="index-3.html">Personal Portfolio</a></li>
-                                    <li><a href="index-4.html">Home Startup</a></li>
-                                    <li><a href="index-5.html">Corporate Agency</a></li>
+                                    @foreach($ProjectItems as $item)
+                                    <li><a href="#">{{ $item->name }}</a></li>
+                                    @endforeach
                                 </ul>
                             </li>
                             <li class="menu-item-has-children">
