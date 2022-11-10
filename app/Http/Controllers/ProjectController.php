@@ -34,9 +34,9 @@ class ProjectController extends AppBaseController
         return view('projects.index')
             ->with('projects', $projects);
     }
-    public function indexhome($id)
+    public function projectpage($name)
     {
-        $projects = Project::find($id);
+        $projects = Project::where('name',$name)->first();
         return view('projects.projecthome')
             ->with('projects', $projects);
     }

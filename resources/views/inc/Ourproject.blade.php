@@ -18,16 +18,18 @@
                             <div class="col-md-6 project branding">
                                 <div class="project-grid">
                                     <div class="thumbnail">
-                                        <a href="single-portfolio.html">
+                                        <a >
                                             <img src="assets/media/project/project-1.png" alt="project">
                                         </a>
                                     </div>
-                                    {!! Form::open(['route' => ['indexhome', $item->id], 'method' => 'get']) !!}
+                                    {!! Form::open(['route' => ['projectpage', $item->name], 'method' => 'get']) !!}
                                     <div class="content">
-                                        <h4 class="title"><a href="single-portfolio.html">{{$item->name}}</a></h4>
+                                        <h4 class="title"><a >{{$item->name}}</a></h4>
                                         <span class="subtitle">{{$item->profile->name}}</span>
+
+                                        <hr>
                                         <span class="subtitle">{{$item->created_at}}</span>
-                                        {!! Form::button('<i class="far fa-trash-alt"></i>', ['type' => 'submit', 'class' => 'btn btn-secondary btn-xs']) !!}
+                                        {!! Form::button('<i class="fad fa-external-link"></i>', ['type' => 'submit', 'class' => 'btn btn-secondary btn-xs']) !!}
 
                                     </div>
                          
