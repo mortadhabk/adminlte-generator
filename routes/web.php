@@ -33,3 +33,8 @@ Route::get('/project/{name}', [App\Http\Controllers\ProjectController::class, 'p
 
 
 Route::resource('categories', App\Http\Controllers\CategoryController::class);
+
+
+
+
+Route::resource('universities', App\Http\Controllers\UniversityController::class);

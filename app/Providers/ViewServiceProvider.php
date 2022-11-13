@@ -4,6 +4,7 @@ namespace App\Providers;
 use App\Models\Profile;
 use App\Models\Project;
 use App\Models\Category;
+use App\Models\University;
 
 use Illuminate\Support\ServiceProvider;
 use View;
@@ -34,6 +35,8 @@ class ViewServiceProvider extends ServiceProvider
             $view->with('categoryItems', $CategoryItems);
             $projectItems = Project::with('Profile')->with('Category')->get();;
             $view->with('ProjectItems', $projectItems);
+            $universityitem = University::all();
+            $view->with('universityitem', $universityitem);
         });
 
         //

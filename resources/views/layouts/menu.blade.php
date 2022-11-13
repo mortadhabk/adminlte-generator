@@ -30,3 +30,14 @@
 </li>
 
 
+
+
+
+<li class="nav-item">
+    <a href="{{ route('universities.index') }}"
+       class="nav-link {{ Request::is('universities*') ? 'active' : '' }}">
+        <p>Universities</p>
+    </a>
+</li>
+
+
