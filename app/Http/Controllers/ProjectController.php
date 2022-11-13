@@ -30,7 +30,7 @@ class ProjectController extends AppBaseController
      */
     public function index(Request $request)
     {
-        $projects = Project::with('Profile')->get();
+        $projects = Project::with('Profile')->with('Category')->get();
         return view('projects.index')
             ->with('projects', $projects);
     }
@@ -60,7 +60,7 @@ class ProjectController extends AppBaseController
     public function store(CreateProjectRequest $request)
     {
         $input = $request->all();
-
+      
         $project = $this->projectRepository->create($input);
 
         Flash::success('Project saved successfully.');

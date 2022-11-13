@@ -4,8 +4,9 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddImageIntoCompetancesTable extends Migration
+class CreateCategoriesTable extends Migration
 {
+
     /**
      * Run the migrations.
      *
@@ -13,8 +14,11 @@ class AddImageIntoCompetancesTable extends Migration
      */
     public function up()
     {
-        Schema::table('competances', function (Blueprint $table) {
-            $table->string('image_url'); 
+        Schema::create('categories', function (Blueprint $table) {
+            $table->id('id');
+            $table->string('name');
+            $table->timestamps();
+            $table->softDeletes();
         });
     }
 
@@ -25,8 +29,6 @@ class AddImageIntoCompetancesTable extends Migration
      */
     public function down()
     {
-        Schema::table('competances', function (Blueprint $table) {
-            $table->dropColumn('image_url');
-        });
+        Schema::drop('categories');
     }
 }

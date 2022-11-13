@@ -18,7 +18,7 @@ class CreateProjectsTable extends Migration
             $table->id('id');
             $table->string('name')->unique();
             $table->text('description');
-            $table->foreignId('profile_id')->constrained('profiles')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreignId('profile_id')->constrained('profiles');
             $table->timestamps();
             $table->softDeletes();
         });

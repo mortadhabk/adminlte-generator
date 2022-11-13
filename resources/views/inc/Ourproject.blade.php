@@ -25,10 +25,10 @@
                                     {!! Form::open(['route' => ['projectpage', $item->name], 'method' => 'get']) !!}
                                     <div class="content">
                                         <h4 class="title"><a >{{$item->name}}</a></h4>
-                                        <span class="subtitle">{{$item->profile->name}}</span>
+                                        <span class="subtitle">{{$item->category->name}}</span>
 
                                         <hr>
-                                        <span class="subtitle">{{$item->created_at}}</span>
+                                        <span class="subtitle">{{$item->profile->name}}</span>
                                         {!! Form::button('<i class="fad fa-external-link"></i>', ['type' => 'submit', 'class' => 'btn btn-secondary btn-xs']) !!}
 
                                     </div>

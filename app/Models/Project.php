@@ -31,7 +31,8 @@ class Project extends Model
     public $fillable = [
         'name',
         'description',
-        'profile_id'
+        'profile_id',
+        'category_id'
     ];
 
     /**
@@ -59,5 +60,7 @@ class Project extends Model
     public function profile(){
         return $this->belongsTo(Profile::Class, 'profile_id');
     }
-    
+    public function category(){
+        return $this->belongsTo(Category::Class, 'category_id');
+    }
 }

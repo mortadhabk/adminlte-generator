@@ -16,6 +16,10 @@
     {!! Form::label('profile_id', 'Profile Id:') !!}
     {!! Form::select('profile_id', $profileItems, null, ['class' => 'form-control custom-select']) !!}
 </div>
+<div class="form-group col-sm-6">
+  {!! Form::label('profile_id', 'Profile Id:') !!}
+  {!! Form::select('category_id', $categoryItems, null, ['class' => 'form-control custom-select']) !!}
+</div>
 <script src='{{asset('js/tinymce/tinymce.min.js')}}'></script>
 
 <script>

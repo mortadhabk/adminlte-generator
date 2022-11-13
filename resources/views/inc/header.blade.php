@@ -27,7 +27,7 @@
                                 <a href="javascript:void(0);">Projects</a>
                                 <ul class="axil-submenu">
                                     @foreach($ProjectItems as $item)
-                                    <li><a href="#">{{ $item->name }}</a></li>
+                                    <li><a href="#">{{ $item->category->name }}</a></li>
                                     @endforeach
                                 </ul>
                             </li>

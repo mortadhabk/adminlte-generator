@@ -30,3 +30,6 @@ Route::resource('competances', App\Http\Controllers\CompetanceController::class)
 
 Route::resource('projects', App\Http\Controllers\ProjectController::class);
 Route::get('/project/{name}', [App\Http\Controllers\ProjectController::class, 'projectpage'])->name('projectpage');
+
+
+Route::resource('categories', App\Http\Controllers\CategoryController::class);
