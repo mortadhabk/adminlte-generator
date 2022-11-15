@@ -56,13 +56,16 @@ class CompetanceController extends AppBaseController
      */
     public function store(Request $request)
     {
-       
         $image = $request->file('image_url');
-        $fileName = "img-".uniqid().".". strtolower($image->getClientOriginalExtension());
-        $image->move('imagets',$fileName);
-        $input = $request->all();
-        $input['image_url'] = 'imagets/'.$fileName;
-        $competance = $this->competanceRepository->create($input);
+        $this->validate($request, [
+            'image_url' => 'required|image|mimes:jpg,jpeg,png,gif,svg|max:2048',
+        ]);
+        $ImageName= time().'.'.$image->getClientOriginalExtension();
+        $imageInputData = Image::make($image->getRealPath());
+        $imageInputData->resize(230, 133)->save('imagets/'.$ImageName);
+        $changeRequestImageNamePath = $request->all();
+        $changeRequestImageNamePath['image_url'] = 'imagets/'.$ImageName;
+        $competance = $this->competanceRepository->create($changeRequestImageNamePath);
 
         Flash::success('Competance saved successfully.');
 
