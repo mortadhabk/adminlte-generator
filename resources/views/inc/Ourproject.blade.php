@@ -19,7 +19,7 @@
                                 <div class="project-grid">
                                     <div class="thumbnail">
                                         <a >
-                                            <img src="assets/media/project/project-1.png" alt="project">
+                                            <img src="{{$item->image_url}}" alt="project">
                                         </a>
                                     </div>
                                     {!! Form::open(['route' => ['projectpage', $item->name], 'method' => 'get']) !!}

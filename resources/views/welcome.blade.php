@@ -5,7 +5,6 @@
             @include('inc.Myuniversity')
             @include('inc.Ourproject')
             @include('inc.Servicearea')
-            @include('inc.Counteruparea')
             @include('inc.Footerarea')
             @include('inc.offcanvasmenu')
     

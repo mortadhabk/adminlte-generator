@@ -59,6 +59,7 @@ class CompetanceController extends AppBaseController
         $image = $request->file('image_url');
         $this->validate($request, [
             'image_url' => 'required|image|mimes:jpg,jpeg,png,gif,svg|max:2048',
+            'name' => 'required'
         ]);
         $ImageName= time().'.'.$image->getClientOriginalExtension();
         $imageInputData = Image::make($image->getRealPath());

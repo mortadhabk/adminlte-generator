@@ -19,7 +19,8 @@ class ProjectRepository extends BaseRepository
     protected $fieldSearchable = [
         'name',
         'description',
-        'profile_id'
+        'profile_id',
+        'image_url'
     ];
 
     /**

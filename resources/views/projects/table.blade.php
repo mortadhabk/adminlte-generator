@@ -6,7 +6,7 @@
         <th>Description</th>
         <th>Profile Name</th>
         <th>Category</th>
-
+        <th>Image</th>
         <th colspan="3">Action</th>
         </tr>
         </thead>
@@ -16,6 +16,7 @@
                 <td>{{ $project->name }}</td>
             <td>...</td>
             <td>{{ $project->profile->name }}</td>
+            <td><img src={{ $project->image_url }}></td>
             <td>{{ $project->category->name }}</td>
 
                 <td width="120">

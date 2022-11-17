@@ -32,6 +32,7 @@ class Project extends Model
         'name',
         'description',
         'profile_id',
+        'image_url',
         'category_id'
     ];
 

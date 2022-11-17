@@ -10,6 +10,7 @@ use App\Models\Project;
 use Illuminate\Http\Request;
 use Flash;
 use Response;
+use Intervention\Image\Facades\Image;
 
 class ProjectController extends AppBaseController
 {
@@ -59,9 +60,17 @@ class ProjectController extends AppBaseController
      */
     public function store(CreateProjectRequest $request)
     {
-        $input = $request->all();
-      
-        $project = $this->projectRepository->create($input);
+        $image = $request->file('image_url');
+        $this->validate($request, [
+            'image_url' => 'required|image|mimes:jpg,jpeg,png,gif,svg|max:2048',
+            'name' => 'required'
+        ]);
+        $ImageName= time().'.'.$image->getClientOriginalExtension();
+        $imageInputData = Image::make($image->getRealPath());
+        $imageInputData->resize(610, 460)->save('imagets/projects/'.$ImageName);
+        $projectdata = $request->all();
+        $projectdata['image_url'] = 'imagets/projects/'.$ImageName;
+        $project = $this->projectRepository->create($projectdata);
 
         Flash::success('Project saved successfully.');
 
