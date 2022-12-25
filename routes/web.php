@@ -32,9 +32,18 @@ Route::resource('projects', App\Http\Controllers\ProjectController::class);
 Route::get('/project/{name}', [App\Http\Controllers\ProjectController::class, 'projectpage'])->name('projectpage');
 
 
+
 Route::resource('categories', App\Http\Controllers\CategoryController::class);
 
 
 
 
 Route::resource('universities', App\Http\Controllers\UniversityController::class);
+
+
+Route::get('/aboutme', [App\Http\Controllers\AboutMeController::class, 'index'])->name('aboutme');
+Route::post('/contactPost', [App\Http\Controllers\ContactController::class, 'contactPost'])->name('contactPost');
+
+Route::get('/contact', [App\Http\Controllers\ContactController::class, 'index'])->name('contact');
+
+Route::get('/{name}', [App\Http\Controllers\CategoryController::class, 'categorypage'])->name('categorypage');

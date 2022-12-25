@@ -35,6 +35,9 @@ class ProjectController extends AppBaseController
         return view('projects.index')
             ->with('projects', $projects);
     }
+
+
+    
     public function projectpage($name)
     {
         $projects = Project::where('name',$name)->first();
@@ -63,15 +66,20 @@ class ProjectController extends AppBaseController
         $image = $request->file('image_url');
         $this->validate($request, [
             'image_url' => 'required|image|mimes:jpg,jpeg,png,gif,svg|max:2048',
+            'description' => 'required',
             'name' => 'required'
+       
         ]);
+
+
         $ImageName= time().'.'.$image->getClientOriginalExtension();
-        $imageInputData = Image::make($image->getRealPath());
-        $imageInputData->resize(610, 460)->save('imagets/projects/'.$ImageName);
         $projectdata = $request->all();
         $projectdata['image_url'] = 'imagets/projects/'.$ImageName;
         $project = $this->projectRepository->create($projectdata);
 
+
+        $imageInputData = Image::make($image->getRealPath());
+        $imageInputData->resize(610, 460)->save('imagets/projects/'.$ImageName);
         Flash::success('Project saved successfully.');
 
         return redirect(route('projects.index'));
@@ -134,7 +142,29 @@ class ProjectController extends AppBaseController
 
             return redirect(route('projects.index'));
         }
+        if($request->file('image_url') !== null){
 
+            $image = $request->file('image_url');
+            $this->validate($request, [
+                'image_url' => 'required|image|mimes:jpg,jpeg,png,gif,svg|max:2048',
+                'description' => 'required'
+            ]);
+            $ImageName= time().'.'.$image->getClientOriginalExtension();
+            $projectdata = $request->all();
+            $projectdata['image_url'] = 'imagets/projects/'.$ImageName;
+            unlink($project->image_url);
+            $project = $this->projectRepository->update($projectdata, $id);
+
+            $imageInputData = Image::make($image->getRealPath());
+            $imageInputData->resize(610, 460)->save('imagets/projects/'.$ImageName);
+
+            Flash::success('Project updated successfully.');
+            return redirect(route('projects.index'));
+        }else{
+            $input = $request->all();
+            $project = $this->projectRepository->update($input, $id);
+
+        }
         $project = $this->projectRepository->update($request->all(), $id);
 
         Flash::success('Project updated successfully.');
@@ -154,7 +184,7 @@ class ProjectController extends AppBaseController
     public function destroy($id)
     {
         $project = $this->projectRepository->find($id);
-
+       unlink($project->image_url);
         if (empty($project)) {
             Flash::error('Project not found');
 

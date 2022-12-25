@@ -16,8 +16,9 @@
                 <td>{{ $project->name }}</td>
             <td>...</td>
             <td>{{ $project->profile->name }}</td>
-            <td><img src={{ $project->image_url }}></td>
             <td>{{ $project->category->name }}</td>
+            <td><img src={{ $project->image_url }} width="50rem"></td>
+         
 
                 <td width="120">
                     {!! Form::open(['route' => ['projects.destroy', $project->id], 'method' => 'delete']) !!}

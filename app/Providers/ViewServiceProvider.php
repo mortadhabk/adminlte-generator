@@ -33,7 +33,7 @@ class ViewServiceProvider extends ServiceProvider
             $view->with('profileItems', $profileItems);
             $CategoryItems = Category::pluck('name','id')->toArray();
             $view->with('categoryItems', $CategoryItems);
-            $projectItems = Project::with('Profile')->with('Category')->get();;
+            $projectItems = Project::with('Profile')->with('Category')->orderBy('id', 'desc')->get();;
             $view->with('ProjectItems', $projectItems);
             $universityitem = University::all();
             $view->with('universityitem', $universityitem);

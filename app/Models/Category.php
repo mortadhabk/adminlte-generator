@@ -48,5 +48,8 @@ class Category extends Model
         'name' => 'required'
     ];
 
-    
+    public function projects()
+    {
+        return $this->hasMany(Project::class);
+    }
 }

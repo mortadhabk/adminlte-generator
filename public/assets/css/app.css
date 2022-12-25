@@ -1080,7 +1080,7 @@ input {
 }
 
 .axil-btn.btn-fill-white:hover {
-    background-color: var(--color-accent1);
+    background-color: var(--color-ship-gray);
     color: var(--color-white);
 }
 

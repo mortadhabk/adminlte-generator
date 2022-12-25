@@ -9,6 +9,7 @@ use App\Http\Controllers\AppBaseController;
 use Illuminate\Http\Request;
 use Flash;
 use Response;
+use App\Models\Category;
 
 class CategoryController extends AppBaseController
 {
@@ -152,5 +153,11 @@ class CategoryController extends AppBaseController
         Flash::success('Category deleted successfully.');
 
         return redirect(route('categories.index'));
+    }
+    public function categorypage($name)
+    {
+        $category = Category::where('name',$name)->with('Projects')->get();
+        return view('categories.categoryhome')
+            ->with('category', $category);
     }
 }
