@@ -5,7 +5,7 @@
                 <div class="container">
                     <div class="footer-top">
                         <div class="footer-social-link">
-                            <ul class="list-unstyled " style="margin : 0 20em;">
+                            <ul class="list-unstyled ">
                                 <li><a href="https://www.facebook.com/mortadhaboubaker/" data-sal="slide-up" data-sal-duration="500" data-sal-delay="100"><i class="fab fa-facebook-f"></i></a></li>
                                 <li><a href="https://www.linkedin.com/in/mortadha-boubakerr/" data-sal="slide-up" data-sal-duration="500" data-sal-delay="400"><i class="fab fa-linkedin-in"></i></a></li>
                                 <li><a href="https://www.instagram.com/mortadha_bk/" data-sal="slide-up" data-sal-duration="500" data-sal-delay="500"><i class="fab fa-instagram"></i></a></li>

@@ -13,7 +13,7 @@
                     <div class="project-grid">
                         <div class="thumbnail">
                             <a  href="/project/{{$item->name}}">
-                                <img src="assets/media/project/project-1.png" alt="project">
+                                <img src="{{$item->image_url}}" alt="project">
                             </a>
                         </div>
                         <div class="content">
