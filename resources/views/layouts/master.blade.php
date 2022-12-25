@@ -26,40 +26,42 @@
 </head>
 
 
-    <body class="sticky-header">
-        <!--[if lte IE 9]>
-        <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
-          <![endif]-->
+<body class="sticky-header">
+    <!--[if lte IE 9]>
+    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+  <![endif]-->
+    <div class="my_switcher2">
         <a href="#main-wrapper" id="backto-top" class="back-to-top">
             <i class="far fa-angle-double-up"></i>
         </a>
+    </div>
+    <!-- Preloader Start Here -->
+    <div id="preloader"></div>
+    <!-- Preloader End Here -->
 
-        <!-- Preloader Start Here -->
-        <div id="preloader"></div>
-        <!-- Preloader End Here -->
+    <div class="my_switcher d-none d-lg-block">
+        <ul>
+            <li title="Light Mode">
+                <a href="javascript:void(0)" class="setColor light" data-theme="light">
+                    <i class="fal fa-lightbulb-on"></i>
+                </a>
+            </li>
+            <li title="Dark Mode">
+                <a href="javascript:void(0)" class="setColor dark" data-theme="dark">
+                    <i class="fas fa-moon"></i>
+                </a>
+            </li>
+        </ul>
+    </div>
 
-        <div class="my_switcher d-none d-lg-block">
-            <ul>
-                <li title="Light Mode">
-                    <a href="javascript:void(0)" class="setColor light" data-theme="light">
-                        <i class="fal fa-lightbulb-on"></i>
-                    </a>
-                </li>
-                <li title="Dark Mode">
-                    <a href="javascript:void(0)" class="setColor dark" data-theme="dark">
-                        <i class="fas fa-moon"></i>
-                    </a>
-                </li>
-            </ul>
-        </div>
 
-        <div id="main-wrapper" class="main-wrapper">
-            @include('inc.header')
-            @yield('content')
-        
-        </div>
+    <div id="main-wrapper" class="main-wrapper">
+        @include('inc.header')
+        @yield('content')
 
-        <!-- Jquery Js -->
+    </div>
+
+    <!-- Jquery Js -->
 
 
 

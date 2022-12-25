@@ -11,6 +11,7 @@
                 <div class="header-main-nav">
                     <!-- Start Mainmanu Nav -->
                     <nav class="mainmenu-nav" id="mobilemenu-popup">
+                        
                         <div class="d-block d-lg-none">
                             <div class="mobile-nav-header">
                                 <div class="mobile-nav-logo">
@@ -31,6 +32,9 @@
                                     @endforeach
                                 </ul>
                             </li>   --}}
+                            <li>
+                                <a href="/">Home</a>
+                            </li>
                             @foreach($categoryItems as $item)
                             <li><a href="/{{$item}}">{{ $item }}</a></li>
                             @endforeach 
@@ -42,7 +46,38 @@
                     </nav>
                     <!-- End Mainmanu Nav -->
                 </div>
-        
+                <div class="header-action">
+                    <ul class="list-unstyled">
+                        <li class="sidemenu-btn d-lg-block d-none">
+                            <button class="btn-wrap" data-bs-toggle="offcanvas" data-bs-target="#offcanvasMenuRight">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </button>
+                        </li>
+                        <li class="mobile-menu-btn sidemenu-btn d-lg-none d-block">
+                            <button class="btn-wrap" data-bs-toggle="offcanvas" data-bs-target="#mobilemenu-popup">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </button>
+                        </li>
+                        <li class="my_switcher d-block d-lg-none">
+                            <ul>
+                                <li title="Light Mode">
+                                    <a href="javascript:void(0)" class="setColor light" data-theme="light">
+                                        <i class="fal fa-lightbulb-on"></i>
+                                    </a>
+                                </li>
+                                <li title="Dark Mode">
+                                    <a href="javascript:void(0)" class="setColor dark" data-theme="dark">
+                                        <i class="fas fa-moon"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
     </div>

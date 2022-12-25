@@ -5,7 +5,7 @@
                 <div class="banner-content" data-sal="slide-up" data-sal-duration="1000" data-sal-delay="100">
                     <h1 class="title">Build beautiful website & mobile apps.</h1>
                     <span class="subtitle">Create live segments and target the right people for messages based on their behaviors.</span>
-                    <a href="contact.html" class="axil-btn btn-fill-primary btn-large">Get Started</a>
+                    <a href="/contact" class="axil-btn btn-fill-primary btn-large">Get Started</a>
                 </div>
             </div>
             <div class="col-lg-6">

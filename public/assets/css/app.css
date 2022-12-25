@@ -646,6 +646,7 @@ input {
 /*-------------------------
     Back To Top  
 --------------------------*/
+
 .back-to-top {
     position: fixed;
     bottom: -40px;
@@ -668,12 +669,19 @@ input {
     -webkit-transition: all 0.3s;
     transition: all 0.3s;
 }
-
+.back-to-top  i {
+    position: relative;
+    top :.85rem;
+}
 @media only screen and (max-width: 575px) {
     .back-to-top {
         width: 40px;
         height: 40px;
         line-height: 40px;
+    }
+    .back-to-top  i {
+        position: relative;
+        top :.65rem;
     }
 }
 
@@ -2426,7 +2434,6 @@ Pagination
 }
 
 .my_switcher ul li a {
-    text-align: center;
     color: var(--color-white);
     font-size: 18px;
     height: 40px;
@@ -2434,8 +2441,22 @@ Pagination
     line-height: 40px;
     border: 1px solid transparent;
     border-radius: 50%;
+    text-align: center;
 }
-
+@media only screen and (min-width: 991px) {
+    .my_switcher ul li a {
+        position: relative;
+        top: 0.6rem;
+        color: var(--color-white);
+        font-size: 18px;
+        height: 40px;
+        width: 40px;
+        line-height: 40px;
+        border: 1px solid transparent;
+        border-radius: 50%;
+        text-align: center;
+    }
+}
 @media only screen and (max-width: 767px) {
     .my_switcher ul li a {
         font-size: 16px;
