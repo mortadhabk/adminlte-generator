@@ -3,7 +3,10 @@
     {!! Form::label('name', 'Name:') !!}
     <p>{{ $competance->name }}</p>
 </div>
-
+<div class="col-sm-12">
+    {!! Form::label('description', 'Description:') !!}
+    <p>{{ $competance->description }}</p>
+</div>
 <!-- Rating Field -->
 <div class="col-sm-12">
     {!! Form::label('rating', 'Rating:') !!}

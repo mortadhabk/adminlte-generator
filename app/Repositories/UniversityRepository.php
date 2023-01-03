@@ -19,7 +19,8 @@ class UniversityRepository extends BaseRepository
     protected $fieldSearchable = [
         'name',
         'description',
-        'place'
+        'place',
+        'image_url'
     ];
 
     /**

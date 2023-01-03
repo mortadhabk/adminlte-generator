@@ -18,7 +18,8 @@ Route::get('/', function () {
 });
 
 Auth::routes();
-
+Route::GET('/register', [App\Http\Controllers\Auth\RegisterController ::class, 'showRegistrationForm '])->middleware('restrictothers');
+Route::post('/register', [App\Http\Controllers\Auth\RegisterController ::class, 'register'])->middleware('restrictothers');
 Route::get('/admin', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 

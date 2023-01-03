@@ -5,6 +5,7 @@
             <th>Name</th>
         <th>Description</th>
         <th>Place</th>
+        <th>Image</th>
         <th>Profile Name</th>
             <th colspan="3">Action</th>
         </tr>
@@ -15,6 +16,8 @@
                 <td>{{ $university->name }}</td>
             <td>{{ $university->description }}</td>
             <td>{{ $university->place }}</td>
+            <td><img src={{ $university->image_url }}></td>
+
             <td>{{ $university->profile->name }}</td>
                 <td width="120">
                     {!! Form::open(['route' => ['universities.destroy', $university->id], 'method' => 'delete']) !!}

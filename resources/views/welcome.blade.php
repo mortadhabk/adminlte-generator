@@ -1,7 +1,11 @@
 @extends('layouts.master')
 @section('content')
-            @include('inc.homepagearea')
-            @include('inc.Ourproject')
+<div class="container-fluid mx-5">
+
+    @include('inc.homepagearea')
+    @include('inc.Ourproject')
+</div>
+        
             <section class="section call-to-action-area">
                 <div class="container">
                     <div class="call-to-action">

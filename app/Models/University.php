@@ -33,7 +33,8 @@ class University extends Model
         'name',
         'description',
         'place',
-        'profile_id'
+        'profile_id',
+        'image_url',
     ];
 
     /**

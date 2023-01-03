@@ -9,7 +9,10 @@
     {!! Form::label('rating', 'Rating:') !!}
     {!! Form::text('rating', null, ['class' => 'form-control','minlength' => 0,'maxlength' => 10]) !!}
 </div>
-
+<div class="form-group col-sm-6">
+    {!! Form::label('description', 'Description:') !!}
+    {!! Form::text('description', null, ['class' => 'form-control']) !!}
+</div>
 <!-- Profile_id Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('profile_id', 'Profile Id:') !!}

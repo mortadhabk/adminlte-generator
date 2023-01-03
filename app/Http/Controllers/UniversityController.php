@@ -10,6 +10,8 @@ use Illuminate\Http\Request;
 use Flash;
 use Response;
 use App\Models\University;
+use Intervention\Image\Facades\Image;
+
 
 class UniversityController extends AppBaseController
 {
@@ -53,11 +55,19 @@ class UniversityController extends AppBaseController
      *
      * @return Response
      */
-    public function store(CreateUniversityRequest $request)
+    public function store(Request $request)
     {
-        $input = $request->all();
-
-        $university = $this->universityRepository->create($input);
+        $image = $request->file('image_url');
+        $this->validate($request, [
+            'image_url' => 'required|image|mimes:jpg,jpeg,png,gif,svg|max:2048',
+            'name' => 'required'
+        ]);
+        $ImageName= time().'.'.$image->getClientOriginalExtension();
+        $imageInputData = Image::make($image->getRealPath());
+        $imageInputData->resize(150, 150)->save('imagets/'.$ImageName);
+        $changeRequestImageNamePath = $request->all();
+        $changeRequestImageNamePath['image_url'] = 'imagets/'.$ImageName;
+        $university = $this->universityRepository->create($changeRequestImageNamePath);
 
         Flash::success('University saved successfully.');
 
@@ -118,12 +128,25 @@ class UniversityController extends AppBaseController
 
         if (empty($university)) {
             Flash::error('University not found');
-
             return redirect(route('universities.index'));
         }
-
-        $university = $this->universityRepository->update($request->all(), $id);
-
+        if($request->file('image_url') !== null){
+            $image = $request->file('image_url') ;
+            $ImageName= time().'.'.$image->getClientOriginalExtension();
+            $imageInputData = Image::make($image->getRealPath());
+            $imageInputData->resize(150, 150)->save('imagets/'.$ImageName);
+            $changeRequestImageNamePath = $request->all();
+            $changeRequestImageNamePath['image_url'] = 'imagets/'.$ImageName;
+            $university = $this->universityRepository->update($changeRequestImageNamePath, $id);
+            Flash::success('Competance updated successfully.');
+            return redirect(route('competances.index'));
+        }else{
+            $input = $request->all();
+            unset($input['image_url']) ;
+            $university = $this->universityRepository->update($input, $id);
+            Flash::success('Competance updated successfully.');
+            return redirect(route('competances.index'));
+        }
         Flash::success('University updated successfully.');
 
         return redirect(route('universities.index'));

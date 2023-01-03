@@ -21,3 +21,7 @@
     {!! Form::label('profile_id', 'Profile Id:') !!}
     {!! Form::select('profile_id', $profileItems, null, ['class' => 'form-control custom-select']) !!}
 </div>
+<div class="form-group col-sm-6">
+    {!! Form::label('image_url', 'Image:') !!}
+    {!! Form::file('image_url',null,['class' => 'form-control']) !!}
+</div>

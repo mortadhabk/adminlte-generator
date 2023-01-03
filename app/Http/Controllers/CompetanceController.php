@@ -63,9 +63,10 @@ class CompetanceController extends AppBaseController
         ]);
         $ImageName= time().'.'.$image->getClientOriginalExtension();
         $imageInputData = Image::make($image->getRealPath());
-        $imageInputData->resize(230, 133)->save('imagets/'.$ImageName);
+        $imageInputData->resize(85, 85)->save('imagets/'.$ImageName);
         $changeRequestImageNamePath = $request->all();
         $changeRequestImageNamePath['image_url'] = 'imagets/'.$ImageName;
+        dd($changeRequestImageNamePath);
         $competance = $this->competanceRepository->create($changeRequestImageNamePath);
 
         Flash::success('Competance saved successfully.');
@@ -129,19 +130,22 @@ class CompetanceController extends AppBaseController
             Flash::error('Competance not found');
             return redirect(route('competances.index'));
         }
-        if($request->file('image_url') !== null){
-            $image = $request->file('image_url');
-            $fileName = "img-".uniqid().".". strtolower($image->getClientOriginalExtension());
-            $image->move('imagets',$fileName);
-            $input = $request->all();
-            $input['image_url'] = 'imagets/'.$fileName;
-    
-            $competance = $this->competanceRepository->update($input, $id);
+        if( $request->file('image_url') !== null){
+            $image = $request->file('image_url') ;
+            $ImageName= time().'.'.$image->getClientOriginalExtension();
+            $imageInputData = Image::make($image->getRealPath());
+            $imageInputData->resize(85, 85)->save('imagets/'.$ImageName);
+            $changeRequestImageNamePath = $request->all();
+            $changeRequestImageNamePath['image_url'] = 'imagets/'.$ImageName;
+            dd($changeRequestImageNamePath);
+
+            $competance = $this->competanceRepository->update($changeRequestImageNamePath, $id);
             Flash::success('Competance updated successfully.');
             return redirect(route('competances.index'));
         }else{
             $input = $request->all();
             unset($input['image_url']) ;
+          
             $competance = $this->competanceRepository->update($input, $id);
             Flash::success('Competance updated successfully.');
             return redirect(route('competances.index'));

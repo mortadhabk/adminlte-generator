@@ -28,12 +28,14 @@ class Competance extends Model
     protected $dates = ['deleted_at'];
 
 
-
+//tres important pour stocker ou modifier le données 
+//sans mettre la variable on peut pas la stocker dans la base
     public $fillable = [
         'name',
         'rating',
         'image_url',
-        'profile_id'
+        'profile_id',
+        'description'
        
     ];
 
