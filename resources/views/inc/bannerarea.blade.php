@@ -6,15 +6,13 @@
                     <div class="row align-items-end align-items-xl-start">
                         <div class="col-lg-6">
                             <div class="banner-content" data-sal="slide-up" data-sal-duration="1000" data-sal-delay="100">
-                                <h1 class="title">Mortadha Boubaker.</h1>
-                                <span class="subtitle">The future belongs to those who prepare for it today.</span>
-                                <a href="contact.html" class="axil-btn btn-fill-primary btn-large">Get Started</a>
+                                <h1 class="title">{!!$aboutmepage->profile->name!!}</h1>
+                                <span class="subtitle">{!!$aboutmepage->profile->email!!} | {!!$aboutmepage->profile->phone!!}</span>
+                                <a href="/contact" class="axil-btn btn-fill-primary btn-large">Contact Me</a>
                             </div>
                         </div>
                         <div class="col-lg-6">
                             <div class="banner-thumbnail">
-                              
-                           
                                 <ul class="list-unstyled shape-group">
                                     <li class="shape shape-1 mt--90" data-sal="slide-left" data-sal-duration="500" data-sal-delay="800">
                                         <img src="assets/media/blog/AvatarMaker.svg" alt="chat" width="80%">

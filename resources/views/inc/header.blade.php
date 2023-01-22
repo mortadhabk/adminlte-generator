@@ -48,13 +48,7 @@
                 </div>
                 <div class="header-action">
                     <ul class="list-unstyled">
-                        <li class="sidemenu-btn d-lg-block d-none">
-                            <button class="btn-wrap" data-bs-toggle="offcanvas" data-bs-target="#offcanvasMenuRight">
-                                <span></span>
-                                <span></span>
-                                <span></span>
-                            </button>
-                        </li>
+               
                         <li class="mobile-menu-btn sidemenu-btn d-lg-none d-block">
                             <button class="btn-wrap" data-bs-toggle="offcanvas" data-bs-target="#mobilemenu-popup">
                                 <span></span>
@@ -62,7 +56,7 @@
                                 <span></span>
                             </button>
                         </li>
-                        <li class="my_switcher d-block d-lg-none">
+                        <li class="my_switcher d-block ">
                             <ul>
                                 <li title="Light Mode">
                                     <a href="javascript:void(0)" class="setColor light" data-theme="light">
@@ -76,6 +70,7 @@
                                 </li>
                             </ul>
                         </li>
+               
                     </ul>
                 </div>
             </div>

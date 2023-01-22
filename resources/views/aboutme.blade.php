@@ -4,7 +4,7 @@
             @include('inc.bannerarea')
             @include('inc.Myuniversity')
  
-            @include('inc.Servicearea')
+            @include('inc.Competance')
             @include('inc.Footerarea')
     
 @endsection

@@ -8,9 +8,9 @@
             <div class="breadcrumb">
                 <ul class="list-unstyled">
                     <li><a href="/">Home</a></li>
-                    <li class="active">{!!$category[0]->name!!}</li>
+                    <li class="active">{!!$categorypage->category[0]->name!!}</li>
                 </ul>
-                <h1 class="title h2">{!!$category[0]->name!!}</h1>
+             
             </div>
         </div>
         <hr class="mt-4">
@@ -22,45 +22,10 @@
     
     <div class="widget widget-recent-post  mx-5 px-5 mt-5 pt-5" >
    
-        <div class="post-list-wrap">
-            
-            @foreach ($category as $items)
-            @foreach($items->projects as $item)
-            <div class="single-post">
-                <div class="post-thumbnail">
-                    <a href="project/{{$item->name}}"><img src={{$item->image_url}} alt="Blog" style="width:100px; height 80px;"></a>
-                </div>
-                <div class="post-content">
-                    <h6 class="title"><a href="project/{{$item->name}}">{{$item->name}}</a></h6>
-                    <ul class="blog-meta list-unstyled">
-                        <li>{{$item->created_at}}</li>
-                        <li>{{$item->profile->name}}</li>
-                    </ul>
-                </div>
-            </div>
-            
-            @endforeach
-            @endforeach
-                       
-            @foreach ($category as $items)
-            @foreach($items->projects as $item)
-            <div class="single-post">
-                <div class="post-thumbnail">
-                    <a href="project/{{$item->name}}"><img src={{$item->image_url}} alt="Blog" style="width:100px; height 80px;"></a>
-                </div>
-                <div class="post-content">
-                    <h6 class="title"><a href="project/{{$item->name}}">{{$item->name}}</a></h6>
-                    <ul class="blog-meta list-unstyled">
-                        <li>{{$item->created_at}}</li>
-                        <li>{{$item->profile->name}}</li>
-                    </ul>
-                </div>
-            </div>
-            
-            @endforeach
-            @endforeach
-                       
-            @foreach ($category as $items)
+        <div class="post-list-wrap section-padding-equal ">
+          
+    
+            @foreach ($categorypage->category as $items)
             @foreach($items->projects as $item)
             <div class="single-post">
                 <div class="post-thumbnail">

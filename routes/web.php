@@ -48,3 +48,7 @@ Route::post('/contactPost', [App\Http\Controllers\ContactController::class, 'con
 Route::get('/contact', [App\Http\Controllers\ContactController::class, 'index'])->name('contact');
 
 Route::get('/{name}', [App\Http\Controllers\CategoryController::class, 'categorypage'])->name('categorypage');
+Route::middleware(['admin'])->group(function () {
+    Route::get('/admin', 'AdminController@index');
+    // other routes ...
+});

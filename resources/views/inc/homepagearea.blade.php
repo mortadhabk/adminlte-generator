@@ -3,22 +3,16 @@
         <div class="row align-items-end align-items-xl-start">
             <div class="col-lg-6">
                 <div class="banner-content" data-sal="slide-up" data-sal-duration="1000" data-sal-delay="100">
-                    <h1 class="title">Build beautiful website & mobile apps.</h1>
-                    <span class="subtitle">Create live segments and target the right people for messages based on their behaviors.</span>
+                    <h2 >I share with you my stories, ideas and perspectives.</h2>
+                    <span class="subtitle">we believe in the power of words to connect and inspire</span>
                     <a href="/contact" class="axil-btn btn-fill-primary btn-large">Get Started</a>
                 </div>
             </div>
             <div class="col-lg-6">
                 <div class="banner-thumbnail">
-                    <div class="large-thumb" data-sal="zoom-in" data-sal-duration="800" data-sal-delay="300">
-                        <img src="assets/media/banner/window.png" alt="Laptop">
-                    </div>
-                    <div class="large-thumb-2" data-sal="slide-left" data-sal-duration="800" data-sal-delay="800">
-                        <img src="assets/media/banner/laptop-poses.png" alt="Laptop">
-                    </div>
                     <ul class="list-unstyled shape-group">
-                        <li class="shape shape-1" data-sal="slide-left" data-sal-duration="500" data-sal-delay="800">
-                            <img src="assets/media/banner/chat-group.png" alt="chat">
+                        <li class="shape shape-1 p-0" data-sal="slide-left" data-sal-duration="500" data-sal-delay="800">
+                            <img src="assets/media/banner/218PS.png" alt="Laptop">
                         </li>
                     </ul>
                 </div>

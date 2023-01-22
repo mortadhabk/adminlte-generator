@@ -35,8 +35,7 @@ class ViewServiceProvider extends ServiceProvider
             $view->with('categoryItems', $CategoryItems);
             $projectItems = Project::with('Profile')->with('Category')->orderBy('id', 'desc')->get();;
             $view->with('ProjectItems', $projectItems);
-            $universityitem = University::all();
-            $view->with('universityitem', $universityitem);
+
         });
 
         //

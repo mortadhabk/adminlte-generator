@@ -1,15 +1,13 @@
 <section class="section section-padding bg-color-light pb--70">
     <div class="container">
         <div class="section-heading mb--90">
-            <span class="subtitle">Parcours</span>
-            <h2 class="title">Our logo design process</h2>
-            <p>Our comprehensive logo design strategy ensures a perfectly crafted logo for your business.</p>
+            <h2 class="title">My Academic Background</h2>
         </div>
         @php
-        $i = 0
+        $i = 0;
         @endphp
-
-        @foreach ($universityitem as $item)
+        
+        @foreach ($aboutmepage->universityitem as $item)
         @php
         $i = $i + 1
         @endphp

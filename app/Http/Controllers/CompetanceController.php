@@ -66,7 +66,6 @@ class CompetanceController extends AppBaseController
         $imageInputData->resize(85, 85)->save('imagets/'.$ImageName);
         $changeRequestImageNamePath = $request->all();
         $changeRequestImageNamePath['image_url'] = 'imagets/'.$ImageName;
-        dd($changeRequestImageNamePath);
         $competance = $this->competanceRepository->create($changeRequestImageNamePath);
 
         Flash::success('Competance saved successfully.');
@@ -137,7 +136,6 @@ class CompetanceController extends AppBaseController
             $imageInputData->resize(85, 85)->save('imagets/'.$ImageName);
             $changeRequestImageNamePath = $request->all();
             $changeRequestImageNamePath['image_url'] = 'imagets/'.$ImageName;
-            dd($changeRequestImageNamePath);
 
             $competance = $this->competanceRepository->update($changeRequestImageNamePath, $id);
             Flash::success('Competance updated successfully.');

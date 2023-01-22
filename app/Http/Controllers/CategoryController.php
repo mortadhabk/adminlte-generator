@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 use Flash;
 use Response;
 use App\Models\Category;
+use App\Models\CategoryPage;
 
 class CategoryController extends AppBaseController
 {
@@ -157,7 +158,10 @@ class CategoryController extends AppBaseController
     public function categorypage($name)
     {
         $category = Category::where('name',$name)->with('Projects')->get();
+
+        $categorypage = new CategoryPage($category);
+
         return view('categories.categoryhome')
-            ->with('category', $category);
+            ->with('categorypage', $categorypage);
     }
 }
